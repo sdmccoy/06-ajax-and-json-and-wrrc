@@ -62,9 +62,10 @@ Article.fetchAll = function() {
           Article.loadAll(data);
           Article.all.forEach(function(newArticleObject){
             $('#articles').append(newArticleObject.toHtml());
-          })
+            localStorage.setItem('articles: ', JSON.stringify(Article.all));
+            // articleView.initIndexPage();
             // console.log(Article.all);
-            // localStorage.setItem('rawData', )
+          })
         }
       );
     // TODO: When we don't already have the rawData,
