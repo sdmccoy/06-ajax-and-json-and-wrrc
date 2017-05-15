@@ -64,8 +64,10 @@ Article.fetchAll = function() {
             $('#articles').append(newArticleObject.toHtml());
             localStorage.setItem('articles: ', JSON.stringify(Article.all));
             // articleView.initIndexPage();
-            // console.log(Article.all);
           })
+        },
+        function(err) {
+          console.error(err);
         }
       );
     // TODO: When we don't already have the rawData,
